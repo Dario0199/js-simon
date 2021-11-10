@@ -7,16 +7,30 @@ const container = document.querySelector('.container-number')
 const number = document.querySelector('.number')
 
 genRandNumb(1, 100);
-
+const array = []
 //generazione 5 numeri random
 
 function genRandNumb(min, max){
+    const array = []
+    console.log(array);
     let numbRand
     for(let i = 0; i < 5; i++){
         numbRand = Math.floor( Math.random() * (max - min + 1) )+ min;
         console.log(numbRand);
-        number.innerText = numbRand
+        array.push(numbRand)
+        number.innerText = array
     }
     
-    
 };
+
+let time = 5;
+let insertNum
+setTimeout(() => {
+    number.classList.add('d-none')
+    for(let i = 0; i < 5; i++){
+    
+        insertNum = parseInt( prompt('inserisci uno per volta i numeri ') );
+        console.log('numeri prompt',insertNum);
+    }
+}, time * 1000)
+
